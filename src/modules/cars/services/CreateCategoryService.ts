@@ -1,3 +1,4 @@
+import { Category } from '../model/Category';
 import {
   ICategoryRepository,
   ICreateCategoryDTO,
@@ -6,7 +7,7 @@ import {
 class CreateCategoryService {
   constructor(private categoryRepository: ICategoryRepository) {}
 
-  execute({ name, description }: ICreateCategoryDTO): ICreateCategoryDTO {
+  execute({ name, description }: ICreateCategoryDTO): Category {
     const categoryAlreadyExists = this.categoryRepository.findByname(name);
 
     if (categoryAlreadyExists) {
