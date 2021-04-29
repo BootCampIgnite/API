@@ -5,4 +5,4 @@
 
 ### Modelo ER (Notação UML)
 
-![Modelo ER - UML][./er.png]
+![Modelo ER - UML](./er.png)
