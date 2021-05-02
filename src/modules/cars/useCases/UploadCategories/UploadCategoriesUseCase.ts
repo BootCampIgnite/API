@@ -1,7 +1,7 @@
 import csvParse from 'csv-parse';
 import fs from 'fs';
 
-import { ICategoryRepository } from '../../repositories/ICategoryRepository';
+import { ICategoryRepository } from '../../repositories/ICategoriesRepository';
 
 type UploadFile = Express.Multer.File;
 

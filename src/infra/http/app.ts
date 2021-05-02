@@ -1,10 +1,15 @@
+import 'reflect-metadata';
+import 'express-async-error';
+
 import express from 'express';
 import morgan from 'morgan';
 import swaggerUI from 'swagger-ui-express';
 
+import '../../shared/container';
+import '../database';
+
 import ApiSchema from '../../shared/docs/swagger.json';
 import routes from './routes';
-import '../database';
 
 const app = express();
 

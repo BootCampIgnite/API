@@ -7,9 +7,11 @@ export default {
   username: process.env.POSTGRES_USER,
   password: process.env.POSTGRES_PASSWORD,
   database: process.env.POSTGRES_DB,
-  synchronize: true,
+  synchronize: false,
   logging: false,
-  entities: ['src/modules/model/**/*.ts'],
-  migrations: ['src/infra/database/migration/**/*.ts'],
-  subscribers: ['src/subscriber/**/*.ts'],
+  entities: ['./src/modules/**/entities/*.ts'],
+  migrations: ['./src/infra/database/migrations/*.ts'],
+  cli: {
+    migrationsDir: './src/infra/database/migrations',
+  },
 };

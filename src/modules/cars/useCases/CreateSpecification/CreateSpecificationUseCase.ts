@@ -1,4 +1,4 @@
-import { Specification } from '../../model/Specification';
+import { Specification } from '../../entities/Specification';
 import {
   ISpecificationRepository,
   ICreateSpecificationDTO,
@@ -7,8 +7,8 @@ import {
 class CreateSpecificationUseCase {
   constructor(private specificationRepository: ISpecificationRepository) {}
 
-  execute({ description, name }: ICreateSpecificationDTO): Specification {
-    const specificationAlreadyExists = this.specificationRepository.findByname(
+  async execute({ description, name }: ICreateSpecificationDTO): Promise<void> {
+    const specificationAlreadyExists = await this.specificationRepository.findByname(
       name,
     );
 
@@ -16,12 +16,10 @@ class CreateSpecificationUseCase {
       throw new Error('Specification Already Exists!');
     }
 
-    const specification = this.specificationRepository.create({
+    await this.specificationRepository.create({
       description,
       name,
     });
-
-    return specification;
   }
 }
 
