@@ -3,7 +3,7 @@ import { Router } from 'express';
 import {
   createSpecificationController,
   listSpecificationController,
-} from '../modules/cars/useCases';
+} from '../../../modules/cars/useCases';
 
 const specificationRouter = Router();
 
