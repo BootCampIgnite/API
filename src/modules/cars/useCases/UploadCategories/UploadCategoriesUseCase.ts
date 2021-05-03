@@ -1,7 +1,8 @@
 import csvParse from 'csv-parse';
 import fs from 'fs';
+import { inject, injectable } from 'tsyringe';
 
-import { ICategoryRepository } from '../../repositories/ICategoriesRepository';
+import { ICategoriesRepository } from '../../repositories/ICategoriesRepository';
 
 type UploadFile = Express.Multer.File;
 
@@ -10,8 +11,12 @@ type IUploadFile = {
   description: string;
 };
 
+@injectable()
 class UploadCategoriesUseCase {
-  constructor(private categoryRepository: ICategoryRepository) {}
+  constructor(
+    @inject('CategoriesRepository')
+    private categoryRepository: ICategoriesRepository,
+  ) {}
 
   private loadDataStream(file: UploadFile): Promise<IUploadFile[]> {
     return new Promise((resolve, reject) => {
@@ -45,13 +50,15 @@ class UploadCategoriesUseCase {
   async execute(file: UploadFile): Promise<void> {
     const categories = await this.loadDataStream(file);
 
-    categories.forEach(element => {
+    categories.forEach(async element => {
       const { name, description } = element;
 
-      const categoryAlreadyExists = this.categoryRepository.findByname(name);
+      const categoryAlreadyExists = await this.categoryRepository.findByname(
+        name,
+      );
 
       if (!categoryAlreadyExists) {
-        this.categoryRepository.create({
+        await this.categoryRepository.create({
           name,
           description,
         });

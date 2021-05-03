@@ -1,11 +1,18 @@
+import { inject, injectable } from 'tsyringe';
+
 import { Specification } from '../../entities/Specification';
-import { ISpecificationRepository } from '../../repositories/ISpecificationRepository';
+import { ISpecificationsRepository } from '../../repositories/ISpecificationsRepository';
 
+@injectable()
 class ListSpecificationUseCase {
-  constructor(private specificationRepository: ISpecificationRepository) {}
+  constructor(
+    @inject('SpecificationsRepository')
+    private specificationRepository: ISpecificationsRepository,
+  ) {}
 
-  execute(): Specification[] {
-    return this.specificationRepository.list();
+  async execute(): Promise<Specification[]> {
+    const specifications = this.specificationRepository.list();
+    return specifications;
   }
 }
 

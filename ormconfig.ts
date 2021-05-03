@@ -3,15 +3,15 @@ import 'dotenv/config';
 export default {
   type: 'postgres',
   host: 'localhost',
-  port: process.env.POSTGRES_PORT,
+  port: process.env.POSTGRES_PORT, // POSTGRES_PORT_EXTERNAL
   username: process.env.POSTGRES_USER,
   password: process.env.POSTGRES_PASSWORD,
   database: process.env.POSTGRES_DB,
   synchronize: false,
   logging: false,
   entities: ['./src/modules/**/entities/*.ts'],
-  migrations: ['./src/infra/database/migrations/*.ts'],
+  migrations: ['./src/infra/typeorm/migrations/*.ts'],
   cli: {
-    migrationsDir: './src/infra/database/migrations',
+    migrationsDir: './src/infra/typeorm/migrations',
   },
 };

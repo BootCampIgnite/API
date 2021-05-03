@@ -6,7 +6,7 @@ import morgan from 'morgan';
 import swaggerUI from 'swagger-ui-express';
 
 import '../../shared/container';
-import '../database';
+import '../typeorm';
 
 import ApiSchema from '../../shared/docs/swagger.json';
 import routes from './routes';
