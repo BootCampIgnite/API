@@ -9,7 +9,7 @@ import '../../shared/container';
 import '../typeorm';
 
 import ApiSchema from '../../shared/docs/swagger.json';
-import routes from './routes';
+import { routes } from './routes';
 
 const app = express();
 
