@@ -19,7 +19,7 @@ class User extends BaseEntity {
   @Column({ unique: true })
   driver_license: string;
 
-  @Column({ unique: true })
+  @Column({ unique: true, default: false })
   is_admin: string;
 }
 
