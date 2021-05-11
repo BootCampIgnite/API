@@ -6,7 +6,7 @@ services:
     container_name: rentex-db
     restart: always
     ports:
-      - 5500:5432
+      - 5435:5432
     environment:
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=admin
