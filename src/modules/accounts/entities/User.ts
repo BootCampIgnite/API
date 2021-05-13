@@ -16,6 +16,9 @@ class User extends BaseEntity {
   @Column()
   password: string;
 
+  @Column({ nullable: true })
+  avatar: string;
+
   @Column({ unique: true })
   driver_license: string;
 
