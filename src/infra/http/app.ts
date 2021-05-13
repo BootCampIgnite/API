@@ -9,6 +9,7 @@ import '../../shared/container';
 import '../typeorm';
 
 import ApiSchema from '../../shared/docs/swagger.json';
+import { ErrorHandler } from './middlewares/ErrorHandler';
 import { routes } from './routes';
 
 const app = express();
@@ -18,6 +19,8 @@ app.use(express.json());
 app.use(morgan('dev'));
 
 app.use(routes);
+
+app.use(ErrorHandler.handle);
 
 app.use('/docs', swaggerUI.serve, swaggerUI.setup(ApiSchema));
 
