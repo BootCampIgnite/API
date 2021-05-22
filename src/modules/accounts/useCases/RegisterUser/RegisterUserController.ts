@@ -7,13 +7,8 @@ import { RegisterUser } from './RegisterUser';
 
 class RegisterUserController {
   async handle(request: Request, response: Response): Promise<Response> {
-    const {
-      driver_license,
-      email,
-      name,
-      password,
-      username,
-    }: ICreateUserDTO = request.body;
+    const { driver_license, email, name, password, username }: ICreateUserDTO =
+      request.body;
 
     try {
       const createCategoryUseCase = container.resolve(RegisterUser);

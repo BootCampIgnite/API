@@ -1,0 +1,30 @@
+import { ICreateCategoryDTO } from 'modules/cars/dtos/ICreateCategoryDTO';
+import { Category } from 'modules/cars/entities/Category';
+
+import { ICategoriesRepository } from '../ICategoriesRepository';
+
+class CategoriesRepository implements ICategoriesRepository {
+  private categories: Category[];
+
+  constructor() {
+    this.categories = [];
+  }
+
+  async findByname(name: string): Promise<Category> {
+    return this.categories.find(element => element.name === name);
+  }
+
+  async list(): Promise<Category[]> {
+    return this.categories;
+  }
+
+  async create({ description, name }: ICreateCategoryDTO): Promise<void> {
+    const category = new Category();
+
+    Object.assign(category, { description, name });
+
+    this.categories.push(category);
+  }
+}
+
+export { CategoriesRepository };
