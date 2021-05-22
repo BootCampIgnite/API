@@ -28,7 +28,7 @@
     "dev": "NODE_ENV=dev tsnd --inspect --transpile-only --ignore-watch node_modules --respawn src/infra/http/server.ts",
     "typeorm": "tsnd node_modules/typeorm/cli.js",
     "lint": "eslint src --ext .ts",
-    "test": "jest"
+    "test": "jest --verbose"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
