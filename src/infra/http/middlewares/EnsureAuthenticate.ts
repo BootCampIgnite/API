@@ -1,7 +1,7 @@
 import { Response, Request, NextFunction } from 'express';
 import { verify } from 'jsonwebtoken';
 
-import { AppException } from '../../../shared/errors/AppException';
+import { AppException } from '@shared/errors/AppException';
 
 type TokenPayload = {
   sub: string;

@@ -1,6 +1,6 @@
 import { Column, Entity } from 'typeorm';
 
-import { BaseEntity } from '../../../core/BaseEntity';
+import { BaseEntity } from '@core/BaseEntity';
 
 @Entity('categories')
 class Category extends BaseEntity {

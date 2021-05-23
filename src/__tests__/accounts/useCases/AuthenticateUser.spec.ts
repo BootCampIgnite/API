@@ -1,9 +1,9 @@
-import { ICreateUserDTO } from 'modules/accounts/dtos/ICreateUserDTO';
-import { IUsersRepository } from 'modules/accounts/repositories/IUsersRepository';
-import { UsersRepository } from 'modules/accounts/repositories/memory/UsersRepository';
-import { AuthenticateUser } from 'modules/accounts/useCases/AuthenticateUser/AuthenticateUser';
-import { RegisterUser } from 'modules/accounts/useCases/RegisterUser/RegisterUser';
-import { AppException } from 'shared/errors/AppException';
+import { ICreateUserDTO } from '@modules/accounts/dtos/ICreateUserDTO';
+import { IUsersRepository } from '@modules/accounts/repositories/IUsersRepository';
+import { UsersRepository } from '@modules/accounts/repositories/memory/UsersRepository';
+import { AuthenticateUser } from '@modules/accounts/useCases/AuthenticateUser/AuthenticateUser';
+import { RegisterUser } from '@modules/accounts/useCases/RegisterUser/RegisterUser';
+import { AppException } from '@shared/errors/AppException';
 
 let usersRepository: IUsersRepository;
 let registerUser: RegisterUser;

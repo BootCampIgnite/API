@@ -1,6 +1,6 @@
 import { Response, Request, NextFunction } from 'express';
 
-import { AppException } from '../../../shared/errors/AppException';
+import { AppException } from '@shared/errors/AppException';
 
 class ErrorHandler {
   static handle(

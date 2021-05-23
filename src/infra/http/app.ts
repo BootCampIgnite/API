@@ -8,7 +8,8 @@ import swaggerUI from 'swagger-ui-express';
 import '../../shared/container';
 import '../typeorm';
 
-import ApiSchema from '../../shared/docs/swagger.json';
+import ApiSchema from '@shared/docs/swagger.json';
+
 import { ErrorHandler } from './middlewares/ErrorHandler';
 import { routes } from './routes';
 

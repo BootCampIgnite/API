@@ -1,6 +1,7 @@
 import { inject, injectable } from 'tsyringe';
 
-import { deleteFile } from '../../../../shared/utils';
+import { deleteFile } from '@shared/utils';
+
 import { IUsersRepository } from '../../repositories/IUsersRepository';
 
 type IRequest = {

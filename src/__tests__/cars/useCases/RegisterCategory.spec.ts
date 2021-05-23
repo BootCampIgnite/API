@@ -1,11 +1,12 @@
+import { validate } from 'uuid';
+
 import {
   ICategoriesRepository,
   ICreateCategoryDTO,
-} from 'modules/cars/repositories/ICategoriesRepository';
-import { CategoriesRepository } from 'modules/cars/repositories/memory/CategoriesRepository';
-import { CreateCategoryUseCase } from 'modules/cars/useCases/CreateCategory/CreateCategoryUseCase';
-import { AppException } from 'shared/errors/AppException';
-import { validate } from 'uuid';
+} from '@modules/cars/repositories/ICategoriesRepository';
+import { CategoriesRepository } from '@modules/cars/repositories/memory/CategoriesRepository';
+import { CreateCategoryUseCase } from '@modules/cars/useCases/CreateCategory/CreateCategoryUseCase';
+import { AppException } from '@shared/errors/AppException';
 
 let createCategory: CreateCategoryUseCase;
 let categoriesRepository: ICategoriesRepository;

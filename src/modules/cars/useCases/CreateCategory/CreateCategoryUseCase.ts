@@ -1,6 +1,7 @@
 import { inject, injectable } from 'tsyringe';
 
-import { AppException } from '../../../../shared/errors/AppException';
+import { AppException } from '@shared/errors/AppException';
+
 import {
   ICategoriesRepository,
   ICreateCategoryDTO,

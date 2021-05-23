@@ -1,7 +1,8 @@
 import { MigrationInterface, QueryRunner } from 'typeorm';
 
 export class AddColumnAvatarUserEntity1620814507345
-  implements MigrationInterface {
+  implements MigrationInterface
+{
   name = 'AddColumnAvatarUserEntity1620814507345';
 
   public async up(queryRunner: QueryRunner): Promise<void> {

@@ -1,7 +1,6 @@
 import { Response, Request } from 'express';
 import { container } from 'tsyringe';
 
-import { created } from '../../../../core/HttpResponse';
 import { ICreateUserDTO } from '../../dtos/ICreateUserDTO';
 import { RegisterUser } from './RegisterUser';
 
