@@ -1,16 +1,16 @@
 import { Response, Request } from 'express';
 import { container } from 'tsyringe';
 
-import { CreateCategoryUseCase } from './CreateCategoryUseCase';
+import { RegisterCategory } from './RegisterCategory';
 
-class CreateCategoryController {
+class RegisterCategoryController {
   async handle(request: Request, response: Response): Promise<Response> {
     const { name, description } = request.body;
 
     try {
-      const createCategoryUseCase = container.resolve(CreateCategoryUseCase);
+      const registerCategory = container.resolve(RegisterCategory);
 
-      await createCategoryUseCase.execute({ name, description });
+      await registerCategory.execute({ name, description });
 
       return response.status(201).send();
     } catch (error) {
@@ -19,4 +19,4 @@ class CreateCategoryController {
   }
 }
 
-export { CreateCategoryController };
+export { RegisterCategoryController };

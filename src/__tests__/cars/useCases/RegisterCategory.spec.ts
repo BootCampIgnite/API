@@ -5,17 +5,17 @@ import {
   ICreateCategoryDTO,
 } from '@modules/cars/repositories/ICategoriesRepository';
 import { CategoriesRepository } from '@modules/cars/repositories/memory/CategoriesRepository';
-import { CreateCategoryUseCase } from '@modules/cars/useCases/CreateCategory/CreateCategoryUseCase';
+import { RegisterCategory } from '@modules/cars/useCases/RegisterCategory/RegisterCategory';
 import { AppException } from '@shared/errors/AppException';
 
-let createCategory: CreateCategoryUseCase;
+let createCategory: RegisterCategory;
 let categoriesRepository: ICategoriesRepository;
 let category: ICreateCategoryDTO;
 
 describe('UseCase - RegisterCategory', () => {
   beforeEach(() => {
     categoriesRepository = new CategoriesRepository();
-    createCategory = new CreateCategoryUseCase(categoriesRepository);
+    createCategory = new RegisterCategory(categoriesRepository);
 
     category = {
       description: 'Esses carros são apenas para ricos!',

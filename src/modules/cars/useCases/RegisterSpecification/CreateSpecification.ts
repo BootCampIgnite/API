@@ -8,7 +8,7 @@ import {
 } from '../../repositories/ISpecificationsRepository';
 
 @injectable()
-class CreateSpecificationUseCase {
+class RegisterSpecification {
   constructor(
     @inject('SpecificationsRepository')
     private specificationRepository: ISpecificationsRepository,
@@ -32,4 +32,4 @@ class CreateSpecificationUseCase {
   }
 }
 
-export { CreateSpecificationUseCase };
+export { RegisterSpecification };

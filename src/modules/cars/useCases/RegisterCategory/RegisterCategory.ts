@@ -8,7 +8,7 @@ import {
 } from '../../repositories/ICategoriesRepository';
 
 @injectable()
-class CreateCategoryUseCase {
+class RegisterCategory {
   constructor(
     @inject('CategoriesRepository')
     private categoryRepository: ICategoriesRepository,
@@ -27,4 +27,4 @@ class CreateCategoryUseCase {
   }
 }
 
-export { CreateCategoryUseCase };
+export { RegisterCategory };

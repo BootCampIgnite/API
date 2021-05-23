@@ -10,9 +10,9 @@ class RegisterUserController {
       request.body;
 
     try {
-      const createCategoryUseCase = container.resolve(RegisterUser);
+      const registerUser = container.resolve(RegisterUser);
 
-      await createCategoryUseCase.execute({
+      await registerUser.execute({
         driver_license,
         email,
         name,

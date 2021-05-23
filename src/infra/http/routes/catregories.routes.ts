@@ -2,7 +2,7 @@ import { Router } from 'express';
 import multer from 'multer';
 
 import {
-  createCategoryContoller,
+  registerCategoryController,
   listCategoriesController,
   uploadCategoriesController,
 } from '../factories/MakeCategoriesController';
@@ -12,7 +12,7 @@ const upload = multer({
   dest: './uploads',
 });
 
-categoriesRouter.post('/', createCategoryContoller.handle);
+categoriesRouter.post('/', registerCategoryController.handle);
 
 categoriesRouter.get('/', listCategoriesController.handle);
 

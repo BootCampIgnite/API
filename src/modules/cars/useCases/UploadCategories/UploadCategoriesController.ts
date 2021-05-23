@@ -1,17 +1,21 @@
 import { Request, Response } from 'express';
 import { container } from 'tsyringe';
 
-import { UploadCategoriesUseCase } from './UploadCategoriesUseCase';
+import { UploadCategories } from './UploadCategories';
 
 class UploadCategoriesController {
   async handle(request: Request, response: Response): Promise<Response> {
     const { file } = request;
 
-    const uploadCategoriesUseCase = container.resolve(UploadCategoriesUseCase);
+    try {
+      const uploadCategories = container.resolve(UploadCategories);
 
-    await uploadCategoriesUseCase.execute(file);
+      await uploadCategories.execute(file);
 
-    return response.send();
+      return response.status(201).send();
+    } catch (error) {
+      return response.status(400).json({ error: error.message });
+    }
   }
 }
 

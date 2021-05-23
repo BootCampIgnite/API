@@ -12,7 +12,7 @@ type IUploadFile = {
 };
 
 @injectable()
-class UploadCategoriesUseCase {
+class UploadCategories {
   constructor(
     @inject('CategoriesRepository')
     private categoryRepository: ICategoriesRepository,
@@ -67,4 +67,4 @@ class UploadCategoriesUseCase {
   }
 }
 
-export { UploadCategoriesUseCase };
+export { UploadCategories };
