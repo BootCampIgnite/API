@@ -30,6 +30,13 @@ class Car extends BaseEntity {
   @Column({ nullable: true })
   fk_category_id: string;
 
+  constructor() {
+    super();
+    if (!this.is_available) {
+      this.is_available = true;
+    }
+  }
+
   // Relationships
 
   @ManyToOne(() => Category, category => category.cars, {
