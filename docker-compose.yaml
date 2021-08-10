@@ -17,6 +17,7 @@ services:
   app:
     build: .
     container_name: rentex-api
+    restart: always
     ports:
       - 3337:3333
     volumes:
