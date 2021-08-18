@@ -10,7 +10,7 @@ import '../typeorm';
 
 import ApiSchema from '@shared/docs/swagger.json';
 
-import { ErrorHandler } from './middlewares/ErrorHandler';
+import { ErrorHandler } from './middlewares';
 import { routes } from './routes';
 
 const app = express();

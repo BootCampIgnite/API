@@ -1,19 +1,6 @@
 version: '3.7'
 
 services:
-  database:
-    image: postgres
-    container_name: rentex-db
-    restart: always
-    ports:
-      - 5435:5432
-    environment:
-      - POSTGRES_USER=admin
-      - POSTGRES_PASSWORD=admin
-      - POSTGRES_DB=rentex
-    volumes:
-      - pgdata:/data/postgres
-
   app:
     build: .
     container_name: rentex-api
@@ -21,12 +8,4 @@ services:
     ports:
       - 3337:3333
     volumes:
-      - .:/usr/src/app
-    links:
-      - database
-    depends_on:
-      - database
-
-volumes:
-  pgdata:
-    driver: local
+      - .:/usr/app
