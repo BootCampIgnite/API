@@ -1,5 +1,5 @@
-import 'reflect-metadata';
 import 'express-async-error';
+import 'reflect-metadata';
 
 import express from 'express';
 import morgan from 'morgan';
