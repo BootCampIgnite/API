@@ -11,6 +11,7 @@ export default {
   logging: false,
   entities: ['./src/modules/**/entities/*.ts'],
   migrations: ['./src/infra/typeorm/migrations/*.ts'],
+  seeds: ['./src/infra/typeorm/seeds/*.ts'],
   cli: {
     migrationsDir: './src/infra/typeorm/migrations',
   },
