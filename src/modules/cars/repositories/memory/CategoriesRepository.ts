@@ -9,6 +9,10 @@ class CategoriesRepository implements ICategoriesRepository {
     this.categories = [];
   }
 
+  async findById(id: string): Promise<Category> {
+    return this.categories.find(element => element.id === id);
+  }
+
   async findByname(name: string): Promise<Category> {
     return this.categories.find(element => element.name === name);
   }

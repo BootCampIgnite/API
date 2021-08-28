@@ -37,7 +37,7 @@ describe('UseCase - RegisterCategory', () => {
     await createCategory.execute(category);
 
     await expect(createCategory.execute(category)).rejects.toEqual(
-      new AppException('Category already exists!', 400),
+      new AppException('Category already exists!', 409),
     );
   });
 });
