@@ -20,7 +20,7 @@ class RegisterCategory {
     );
 
     if (categoryAlreadyExists) {
-      throw new AppException('Category already exists!');
+      throw new AppException('Category already exists!', 409);
     }
 
     await this.categoryRepository.create({ description, name });
