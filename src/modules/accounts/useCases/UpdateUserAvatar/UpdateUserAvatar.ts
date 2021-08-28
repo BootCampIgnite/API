@@ -1,5 +1,6 @@
 import { inject, injectable } from 'tsyringe';
 
+import { AppException } from '@shared/errors/AppException';
 import { deleteFile } from '@shared/utils';
 
 import { IUsersRepository } from '../../repositories/IUsersRepository';
@@ -17,6 +18,10 @@ class UpdateUserAvatar {
   ) {}
 
   async execute({ user_id, avatar_file }: IRequest): Promise<void> {
+    if (!avatar_file) {
+      throw new AppException('Avatar file is required', 400);
+    }
+
     const user = await this.userRepository.findById(user_id);
 
     if (user.avatar) {
