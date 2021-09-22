@@ -3,7 +3,7 @@ import { inject, injectable } from 'tsyringe';
 import { AppException } from '@shared/errors/AppException';
 import { deleteFile } from '@shared/utils';
 
-import { IUsersRepository } from '../../repositories/IUsersRepository';
+import { IUsersRepository } from '../../infra/typeorm/repositories/IUsersRepository';
 
 type IRequest = {
   user_id: string;

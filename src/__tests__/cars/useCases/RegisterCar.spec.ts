@@ -3,10 +3,10 @@ import { v4 } from 'uuid';
 import {
   ICarsRepository,
   ICreateCarDTO,
-} from '@modules/cars/repositories/ICarsRepository';
-import { ICategoriesRepository } from '@modules/cars/repositories/ICategoriesRepository';
-import { CarsRepository } from '@modules/cars/repositories/memory/CarsRepository';
-import { CategoriesRepository } from '@modules/cars/repositories/memory/CategoriesRepository';
+} from '@modules/cars/infra/typeorm/repositories/ICarsRepository';
+import { ICategoriesRepository } from '@modules/cars/infra/typeorm/repositories/ICategoriesRepository';
+import { CarsRepository } from '@modules/cars/infra/typeorm/repositories/memory/CarsRepository';
+import { CategoriesRepository } from '@modules/cars/infra/typeorm/repositories/memory/CategoriesRepository';
 import { RegisterCar } from '@modules/cars/useCases/RegisterCar/RegisterCar';
 import { AppException } from '@shared/errors/AppException';
 

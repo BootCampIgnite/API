@@ -4,7 +4,7 @@ import { hash } from 'bcrypt';
 import { getRepository } from 'typeorm';
 import { Seeder } from 'typeorm-seeding';
 
-import { User } from '@modules/accounts/entities/User';
+import { User } from '@modules/accounts/infra/typeorm/entities/User';
 
 class CreateAccountAdmin implements Seeder {
   public async run(): Promise<void> {

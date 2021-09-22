@@ -3,8 +3,8 @@ import { validate } from 'uuid';
 import {
   ICategoriesRepository,
   ICreateCategoryDTO,
-} from '@modules/cars/repositories/ICategoriesRepository';
-import { CategoriesRepository } from '@modules/cars/repositories/memory/CategoriesRepository';
+} from '@modules/cars/infra/typeorm/repositories/ICategoriesRepository';
+import { CategoriesRepository } from '@modules/cars/infra/typeorm/repositories/memory/CategoriesRepository';
 import { RegisterCategory } from '@modules/cars/useCases/RegisterCategory/RegisterCategory';
 import { AppException } from '@shared/errors/AppException';
 

@@ -1,4 +1,4 @@
-import { ICreateCategoryDTO } from '../../dtos/ICreateCategoryDTO';
+import { ICreateCategoryDTO } from '../../../../dtos/ICreateCategoryDTO';
 import { Category } from '../../entities/Category';
 import { ICategoriesRepository } from '../ICategoriesRepository';
 

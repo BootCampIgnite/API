@@ -5,7 +5,7 @@ import { AppException } from '@shared/errors/AppException';
 import {
   ICategoriesRepository,
   ICreateCategoryDTO,
-} from '../../repositories/ICategoriesRepository';
+} from '../../infra/typeorm/repositories/ICategoriesRepository';
 
 @injectable()
 class RegisterCategory {

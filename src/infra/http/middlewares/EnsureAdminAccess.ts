@@ -1,6 +1,6 @@
 import { Response, Request, NextFunction } from 'express';
 
-import { UsersRepository } from '@modules/accounts/repositories/typeorm/UsersRepository';
+import { UsersRepository } from '@modules/accounts/infra/typeorm/repositories/typeorm/UsersRepository';
 
 class EnsureAdminAccess {
   static async handle(

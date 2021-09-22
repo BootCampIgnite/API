@@ -5,7 +5,7 @@ import { AppException } from '@shared/errors/AppException';
 import {
   ISpecificationsRepository,
   ICreateSpecificationsDTO,
-} from '../../repositories/ISpecificationsRepository';
+} from '../../infra/typeorm/repositories/ISpecificationsRepository';
 
 @injectable()
 class RegisterSpecification {

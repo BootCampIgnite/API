@@ -2,8 +2,8 @@ import { inject, injectable } from 'tsyringe';
 import { validate } from 'uuid';
 
 import { ICreateCarDTO } from '@modules/cars/dtos/ICreateCarDTO';
-import { ICarsRepository } from '@modules/cars/repositories/ICarsRepository';
-import { ICategoriesRepository } from '@modules/cars/repositories/ICategoriesRepository';
+import { ICarsRepository } from '@modules/cars/infra/typeorm/repositories/ICarsRepository';
+import { ICategoriesRepository } from '@modules/cars/infra/typeorm/repositories/ICategoriesRepository';
 import { AppException } from '@shared/errors/AppException';
 
 @injectable()
