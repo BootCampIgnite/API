@@ -12,7 +12,7 @@ class Car extends BaseEntity {
   @Column()
   description: string;
 
-  @Column()
+  @Column({ type: 'decimal', precision: 12, scale: 2 })
   daily_rate: number;
 
   @Column({ default: true })
@@ -21,7 +21,7 @@ class Car extends BaseEntity {
   @Column({ unique: true })
   license_plate: string;
 
-  @Column()
+  @Column({ type: 'decimal', precision: 12, scale: 2 })
   fine_amount: number;
 
   @Column()

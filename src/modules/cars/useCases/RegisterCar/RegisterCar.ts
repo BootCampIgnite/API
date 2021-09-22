@@ -16,20 +16,23 @@ class RegisterCar {
     private categoriesRepository: ICategoriesRepository,
   ) {}
 
-  async execute(data: ICreateCarDTO): Promise<void> {
-    const { license_plate, name, fk_category_id } = data;
-    if (fk_category_id) {
-      if (validate(fk_category_id)) {
-        const category = await this.categoriesRepository.findById(
-          fk_category_id,
-        );
+  async execute({
+    brand,
+    daily_rate,
+    description,
+    fine_amount,
+    license_plate,
+    name,
+    fk_category_id,
+  }: ICreateCarDTO): Promise<void> {
+    if (validate(fk_category_id)) {
+      const category = await this.categoriesRepository.findById(fk_category_id);
 
-        if (!category) {
-          throw new AppException('Category not found!', 404);
-        }
-      } else {
-        throw new AppException('CategoryId is invalid!', 400);
+      if (!category) {
+        throw new AppException('Category not found!', 404);
       }
+    } else {
+      throw new AppException('CategoryId is invalid!', 400);
     }
 
     const carPlateExists = await this.carsRepository.findByPlate(license_plate);
@@ -44,7 +47,15 @@ class RegisterCar {
       throw new AppException('Car name already exists!', 409);
     }
 
-    await this.carsRepository.create(data);
+    await this.carsRepository.create({
+      name,
+      brand,
+      description,
+      license_plate,
+      fk_category_id,
+      daily_rate,
+      fine_amount,
+    });
   }
 }
 
