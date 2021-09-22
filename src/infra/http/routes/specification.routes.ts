@@ -5,10 +5,11 @@ import {
   createSpecificationController,
 } from '../factories/MakeSpecificationsController';
 import { EnsureAuthenticate } from '../middlewares';
+import { EnsureAdminAccess } from '../middlewares/EnsureAdminAccess';
 
 const specificationRouter = Router();
 
-specificationRouter.use(EnsureAuthenticate.handle);
+specificationRouter.use([EnsureAuthenticate.handle, EnsureAdminAccess.handle]);
 
 specificationRouter.get('/', listSpecificationController.handle);
 
