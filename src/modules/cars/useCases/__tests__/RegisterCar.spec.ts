@@ -71,7 +71,7 @@ describe('UseCase - RegisterCar', () => {
     ).rejects.toEqual(new AppException('CategoryId is invalid!', 400));
   });
 
-  it('should  not be able to register cars with categoryId', async () => {
+  it('should be able to register cars with categoryId', async () => {
     const category = await categoriesRepository.findByname('DescName');
 
     await registerCar.execute({ ...carsProps, fk_category_id: category.id });
